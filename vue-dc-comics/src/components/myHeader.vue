@@ -14,35 +14,8 @@
         <div class="box-menu">
 
             <ul>
-                <li>
-                    <a href="#">CHARACTER</a>
-                </li>
-                <li>
-                    <a href="#">COMICS</a>
-                </li>
-                <li>
-                    <a href="#">MOVIES</a>
-                </li>
-                <li>
-                    <a href="#">TV</a>
-                </li>
-                <li>
-                    <a href="#">GAMES</a>
-                </li>
-                <li>
-                    <a href="#">COLLECTIBLES</a>
-                </li>
-                <li>
-                    <a href="#">VIDEOS</a>
-                </li>
-                <li>
-                    <a href="#">FANS</a>
-                </li>
-                <li>
-                    <a href="#">NEWS</a>
-                </li>
-                <li>
-                    <a href="#">SHOP</a>
+                <li v-for="(link, index) in menuLink" :key="index">
+                    <a :class="link.active ? 'active' : ''" href="#">{{link.text}}</a>
                 </li>
             </ul>
 
@@ -57,7 +30,57 @@ export default{
     name: 'myHeader',
     props: {
         msg: String
-    }
+    },
+
+    data(){
+
+        return {
+
+            menuLink: [
+
+                {
+                    text: 'CHARACTERS',
+                    active: false,
+                },
+                {
+                    text: 'COMICS',
+                    active: true,
+                },
+                {
+                    text: 'MOVIES',
+                    active: false,
+                },
+                {
+                    text: 'TV',
+                    active: false,
+                },
+                {
+                    text: 'GAMES',
+                    active: false,   
+                },
+                {
+                    text: 'COLLECTIBLES',
+                    active: false,
+                },
+                {
+                    text: 'VIDEOS',
+                    active: false,
+                },
+                {
+                    text: 'FANS',
+                    active: false,
+                },
+                {
+                    text: 'NEWS',
+                    active: false,
+                },
+                {
+                    text: 'SHOP',
+                    active: false,
+                },
+            ],
+        }
+    },
 }
 </script>
 
