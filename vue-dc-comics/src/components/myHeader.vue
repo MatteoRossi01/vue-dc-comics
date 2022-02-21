@@ -55,6 +55,9 @@
 <script>
 export default{
     name: 'myHeader',
+    props: {
+        msg: String
+    }
 }
 </script>
 
@@ -65,7 +68,7 @@ export default{
         width: 75%;
         height: 100px;
         margin: auto;
-        margin-top: 20px;
+        margin-top: 5px;
         @include my_row_flex;
         justify-content: space-between;
         align-items: center;
@@ -89,7 +92,7 @@ export default{
                         text-decoration: none;
                         font-size: 13px;
                         font-weight: 700;
-                        padding-bottom: 38px;
+                        padding-bottom: 36px;
 
                         &.active, &:hover{
                             border-bottom: 5px solid $Blue;
