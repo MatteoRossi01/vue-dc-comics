@@ -3,6 +3,7 @@
       <myHeader></myHeader> 
       <myMain></myMain>
       <myLinkBox></myLinkBox>
+      <myFooter></myFooter>
   </div>
 </template>
 
@@ -10,6 +11,7 @@
 import myHeader from './components/myHeader.vue'
 import myMain from './components/myMain.vue'
 import myLinkBox from './components/myLinkBox.vue'
+import myFooter from './components/myFooter.vue'
 
 export default {
   name: 'App',
@@ -17,6 +19,7 @@ export default {
     myHeader,
     myMain,
     myLinkBox,
+    myFooter,
   }
 }
 </script>

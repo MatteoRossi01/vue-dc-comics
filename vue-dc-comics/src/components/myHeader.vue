@@ -66,7 +66,7 @@ export default{
 
     .container-header {
         width: 75%;
-        height: 100px;
+        height: 80px;
         margin: auto;
         margin-top: 5px;
         @include my_row_flex;
@@ -75,7 +75,7 @@ export default{
 
         .box-logo {
             img {
-                width: 80px;
+                width: 60px;
             }
         }
 
@@ -92,7 +92,7 @@ export default{
                         text-decoration: none;
                         font-size: 13px;
                         font-weight: 700;
-                        padding-bottom: 36px;
+                        padding-bottom: 26px;
 
                         &.active, &:hover{
                             border-bottom: 5px solid $Blue;

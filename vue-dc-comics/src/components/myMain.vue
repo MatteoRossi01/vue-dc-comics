@@ -15,7 +15,6 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
     @import "../assets/style/variables.scss";
     main {  
@@ -25,8 +24,8 @@ export default {
         .container-main {
             width: 74%;
             margin: auto;
-            height: 120px;
-            font-size: 22px;
+            height: 80px;
+            font-size: 21px;
             @include my_row_flex;
         }
     }

@@ -64,11 +64,13 @@ export default {
     @import "../assets/style/variables.scss";
     .container-link-box {
         background-color: $Blue;
+        position: relative;
+        z-index: 2;
       
         .link-box {
             width: 70%;
             margin: auto;
-            height: 120px;
+            height: 100px;
             @include my_row_flex;
             justify-content: space-between;
 
