@@ -1,0 +1,18 @@
+/* Color */
+$White: #fff;
+$Black : #000;
+$Grey: #384d5e;
+$Blue: #0081f8;
+$DarkGrey: #333333;
+/* Color */
+
+@mixin my_row_flex{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+@mixin my_col_flex{
+    display: flex;
+    flex-direction: column;
+}
