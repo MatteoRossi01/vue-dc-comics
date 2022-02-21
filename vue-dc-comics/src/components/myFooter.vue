@@ -89,8 +89,7 @@ export default {
 
     .footer-top {
         width: 100%;
-        height: 260px;
-        min-height: 280px;
+        height: 272px;
         background-image: url("../assets/img/footer-bg.jpg");
         background-repeat: no-repeat;
         background-size: cover;
@@ -102,7 +101,7 @@ export default {
 
         .footer-left {
             margin-top: 15px;
-            margin-left: 180px;
+            margin-left: 150px;
             display: flex;
             flex-direction: column;
             flex-wrap: wrap;
@@ -177,7 +176,6 @@ export default {
                 img {
                     width: 48px;
                     padding-left: 20px;
-
                 }
             }
         }

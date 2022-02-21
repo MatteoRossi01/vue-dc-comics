@@ -68,7 +68,7 @@ export default {
         z-index: 2;
       
         .link-box {
-            width: 70%;
+            width: 75%;
             margin: auto;
             height: 100px;
             @include my_row_flex;
