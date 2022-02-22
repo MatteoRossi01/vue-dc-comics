@@ -2,48 +2,12 @@
     <div class="container-link-box">
 
         <div class="link-box">
-            <a href="#" class="link-card">
+            <a href="#" class="link-card" v-for="(link, index) in Links" :key="index">
                 <div class="box-img">
-                    <img src="../assets/img/buy-comics-digital-comics.png" alt="link-img">
+                    <img :src=link.src alt="link-img">
                 </div>
                 <div class="box-txt">
-                    <span>DIGITAL COMICS</span>
-                </div>
-            </a>  
-
-            <a href="#" class="link-card">
-                <div class="box-img">
-                    <img src="../assets/img/buy-comics-merchandise.png" alt="link-img">
-                </div>
-                <div class="box-txt">
-                    <span>DC MERCHANDISE</span>
-                </div>
-            </a>  
-
-            <a href="#" class="link-card">
-                <div class="box-img">
-                    <img src="../assets/img/buy-comics-subscriptions.png" alt="link-img">
-                </div>
-                <div class="box-txt">
-                    <span>SUBSCRIPTIONS</span>
-                </div>
-            </a>  
-
-            <a href="#" class="link-card">
-                <div class="box-img">
-                    <img src="../assets/img/buy-comics-shop-locator.png" alt="link-img">
-                </div>
-                <div class="box-txt">
-                    <span>COMIC SHOP LOCATOR</span>
-                </div>
-            </a>  
-
-            <a href="#" class="link-card">
-                <div class="box-img">
-                    <img src="../assets/img/buy-dc-power-visa.svg" alt="link-img">
-                </div>
-                <div class="box-txt">
-                    <span>DC POWER VISA</span>
+                    <span>{{link.text}}</span>
                 </div>
             </a>  
         </div>
@@ -56,7 +20,37 @@ export default {
     name: 'myLinkBox',
     props: {
         msg: String
-    }
+    },
+
+    data(){
+
+        return {
+
+            Links: [
+
+                {
+                    text: 'DIGITAL COMICS',
+                    src: require('../assets/img/buy-comics-digital-comics.png'),
+                },
+                {
+                    text: 'DC MERCHANDISE',
+                    src: require('../assets/img/buy-comics-merchandise.png'),
+                },
+                {
+                    text: 'SUBSCRIPTION',
+                    src: require('../assets/img/buy-comics-subscriptions.png'),
+                },
+                {
+                    text: 'COMIC SHOP LOCATOR',
+                    src: require('../assets/img/buy-comics-shop-locator.png'),
+                },
+                {
+                    text: 'DC POWER VISA',
+                    src: require('../assets/img/buy-dc-power-visa.svg'),   
+                },
+            ],
+        }
+    },
 }
 </script>
 
