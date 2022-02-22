@@ -19,12 +19,11 @@ export default {
     myHeader,
     myMain,
     myLinkBox,
-    myFooter,
+    myFooter
   }
 }
 </script>
 
 <style lang="scss">
   @import "./assets/style/general.scss";
-    
 </style>

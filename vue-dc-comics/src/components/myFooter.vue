@@ -4,40 +4,11 @@
         <div class="footer-top">
             <div class="footer-left">
 
-                <div class="col">
-                    <h2>DC COMICS</h2>
-                    <a href="#">Characters</a>
-                    <a href="#">Characters</a>
-                    <a href="#">Characters</a>
-                    <a href="#">Characters</a>
-                    <a href="#">Characters</a>
-                    <a href="#">Characters</a> 
-                </div>
-
-                <div class="col">
-                    <h2>DC COMICS</h2>
-                    <a href="#">Characters</a>
-                    <a href="#">Characters</a>
-                </div>
-
-                <div class="col">
-                    <h2>DC COMICS</h2>
-                    <a href="#">Characters</a>
-                    <a href="#">Characters</a>
-                    <a href="#">Characters</a>
-                    <a href="#">Characters</a>
-                    <a href="#">Characters</a>
-                    <a href="#">Characters</a> 
-                    <a href="#">Characters</a>
-                    <a href="#">Characters</a>
-                </div>
-
-                <div class="col">
-                    <h2>DC COMICS</h2>
-                    <a href="#">Characters</a>
-                    <a href="#">Characters</a>
-                    <a href="#">Characters</a>
-                    <a href="#">Characters</a>
+                <div class="col" v-for ="(link, index) in footerLinks" :key="index">
+                    <h2>{{link.title}}</h2>
+                    <span v-for ="(miniLink, index) in link.Links" :key="index">
+                        <a href="#">{{miniLink.text}}</a>
+                    </span>
                 </div>
 
             </div>
@@ -51,23 +22,10 @@
             <div class="footer-btn">
                 <a href="#">SIGN-UP NOW!</a>
             </div>
-
-            <div class="footer-social">
-                <span>FOLLOW US</span>
-                <a href="#">
-                    <img src="../assets/img/footer-facebook.png" alt="">
-                </a>
-                <a href="#">
-                    <img src="../assets/img/footer-twitter.png" alt="">
-                </a>
-                <a href="#">
-                    <img src="../assets/img/footer-youtube.png" alt="">
-                </a>
-                <a href="#">
-                    <img src="../assets/img/footer-pinterest.png" alt="">
-                </a>
-                <a href="#">
-                    <img src="../assets/img/footer-periscope.png" alt="">
+            <span>FOLLOW US</span>
+            <div class="footer-social" v-for="(link, index) in socialLinks" :key="index">
+                <a href="">
+                    <img :src=link.src alt="">
                 </a>
             </div>
         </div>
@@ -80,7 +38,138 @@ export default {
     name: "myFooter",
     props: {
         msg: String
-    }
+    },
+
+    data(){
+
+        return {
+
+            footerLinks: [
+
+               {
+                    title: 'DC COMICS',
+
+                    Links: [
+                        {
+                        text:'Characters',        
+                        },
+                        {
+                        text:'Comics',        
+                        },
+                        {
+                        text:'Movies',   
+                        },
+                        {
+                        text:'Tv',
+                        },
+                        {
+                        text:'Games',                        
+                        },
+                        {
+                        text:'Videos',  
+                        },
+                        {
+                        text:'News',
+                        },
+                    ],
+                },
+
+                {
+                    title: 'SHOP',
+
+                    Links: [
+                        {
+                        text:'Shop DC',        
+                        },
+                        {
+                        text:'Shop DC Collectibles',        
+                        },
+                    ],
+                },
+
+                {
+                    title: 'DC',
+
+                    Links: [
+                        {
+                        text:'Term Of Use',        
+                        },
+                        {
+                        text:'Privacy policy(new)',        
+                        },
+                        {
+                        text:'Ad Choices',   
+                        },
+                        {
+                        text:'Addvertising',
+                        },
+                        {
+                        text:'Jobs',                        
+                        },
+                        {
+                        text:'Subscriptions',  
+                        },
+                        {
+                        text:'Talent Workshop',
+                        },
+                        {
+                        text:'CPSC Certificates',
+                        },
+                        {
+                        text:'Ratings',                        
+                        },
+                        {
+                        text:'Shop Help',  
+                        },
+                        {
+                        text:'Contact Us',
+                        },
+                    ],
+                },
+
+                {
+                    title: 'SITES',
+
+                    Links: [
+                        {
+                        text:'DC',        
+                        },
+                        {
+                        text:'MAD Magazine',        
+                        },
+                        {
+                        text:'DC Kids',                        
+                        },
+                        {
+                        text:'DC Universe',  
+                        },
+                        {
+                        text:'DC Power Visa',
+                        },
+                    ],
+                },
+            ],
+
+            socialLinks: [
+
+                {
+                    src: require('../assets/img/footer-facebook.png'),
+                },
+                {
+                    src: require('../assets/img/footer-twitter.png'),
+                },
+                {
+                    src: require('../assets/img/footer-youtube.png'),
+                },
+                {
+                    src: require('../assets/img/footer-pinterest.png'),
+                },
+                {
+                    src: require('../assets/img/footer-periscope.png'),   
+                },
+            ],
+        }
+    },
 }
 </script>
 
@@ -100,7 +189,7 @@ export default {
         position: relative;
 
         .footer-left {
-            margin-top: 15px;
+            margin-top: 10px;
             margin-left: 150px;
             display: flex;
             flex-direction: column;
@@ -108,7 +197,7 @@ export default {
 
             .col {
                 @include my_col_flex;
-                line-height: 20px;
+                line-height: 17px;
                 padding: 0px 25px;
 
                 h2 {
@@ -119,7 +208,7 @@ export default {
                 }
 
                 a {
-                    font-size: 11px;
+                    font-size: 12px;
                     text-decoration: none;
                     color: $Grey;
                 }
@@ -129,7 +218,7 @@ export default {
         .footer-right {
             position: absolute;
             bottom: -58px;
-            right: 200px;
+            right: 165px;
 
             img {
                 width: 400px;
@@ -144,11 +233,12 @@ export default {
         z-index: 2;
         display: flex;
         align-items: center;
-        justify-content: space-around;
 
         .footer-btn {
             width: 10%;
             margin-bottom: 10px;
+            position: absolute;
+            left: 170px;
 
             a {
                 text-decoration: none;
@@ -160,22 +250,24 @@ export default {
             }
         }
 
+        span {
+            font-size: 18px;
+            font-weight: 600;
+            color: $Blue;
+            position: absolute;
+            right: 425px;
+        }
+
         .footer-social {
             display: flex;
-            flex-direction: row;
             align-items: center;
+            position: relative;
+            left: 945px;
 
-            span {
-                font-size: 18px;
-                font-weight: 600;
-                color: $Blue;
-            }
-            
             a {
-
                 img {
                     width: 48px;
-                    padding-left: 20px;
+                    padding-left: 19px;
                 }
             }
         }
